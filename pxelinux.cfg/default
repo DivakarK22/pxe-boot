@@ -20,8 +20,6 @@ KERNEL /networkboot/vmlinuz
 APPEND initrd=/networkboot/initrd.img ks=http://192.168.1.57/ks4.cfg
 LABEL UBUNTU
 MENU LABEL UBUNTU
-KERNEL /networkboot/vmlinuz
-APPEND initrd=/networkboot/initrd.img ks=http://192.168.1.57/ubuntu.cfg
-
-
+KERNEL /ubuntu_test/vmlinuz
+APPEND initrd=/ubuntu_test/initrd.gz ks=http://192.168.1.57/ubuntu.cfg
 

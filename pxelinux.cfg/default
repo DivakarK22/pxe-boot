@@ -7,7 +7,7 @@ MENU LABEL CENTOS GNOME
 KERNEL /networkboot/vmlinuz
 APPEND initrd=/networkboot/initrd.img ks=http://192.168.1.57/ks1.cfg
 LABEL centos7_x64
-MENU LABEL CENTOS MINIMAL
+MENU LABEL CENTOS MINIMAL INSTALL
 KERNEL /networkboot/vmlinuz
 APPEND initrd=/networkboot/initrd.img ks=http://192.168.1.57/ks2.cfg
 LABEL CENTOS MATE

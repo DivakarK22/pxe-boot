@@ -18,5 +18,10 @@ LABEL CENTOS KDE
 MENU LABEL CENTOS KDE
 KERNEL /networkboot/vmlinuz
 APPEND initrd=/networkboot/initrd.img ks=http://192.168.1.57/ks4.cfg
+LABEL UBUNTU
+MENU LABEL UBUNTU
+KERNEL /networkboot/vmlinuz
+APPEND initrd=/networkboot/initrd.img ks=http://192.168.1.57/ubuntu.cfg
+
 
 

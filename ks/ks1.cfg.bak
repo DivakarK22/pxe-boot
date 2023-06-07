@@ -1,0 +1,48 @@
+install
+cdrom
+lang en_US.UTF-8
+keyboard us
+unsupported_hardware
+network --bootproto=dhcp
+rootpw 123
+firewall --disabled
+selinux --disabled
+timezone Asia/Kolkata
+unsupported_hardware
+bootloader --location=mbr
+text
+skipx
+zerombr
+clearpart --all --initlabel
+url --url http://192.168.1.57/iso/
+#Disk partitioning information
+part /boot --fstype ext4 --size=2048
+part swap  --asprimary   --size=8192
+part /     --fstype ext4 --size=1 --grow
+
+auth --enableshadow --passalgo=sha512 --kickstart
+firstboot --disabled
+eula --agreed
+services --enabled=NetworkManager,sshd
+shutdown
+user --name=vagrant --plaintext --password vagrant --groups=vagrant,wheel
+
+repo --name=base --baseurl=http://mirror.centos.org/centos/7.3.1611/os/x86_64/
+repo --name=epel-release --baseurl=http://anorien.csc.warwick.ac.uk/mirrors/epel/7/x86_64/
+repo --name=elrepo-kernel --baseurl=http://elrepo.org/linux/kernel/el7/x86_64/
+repo --name=elrepo-release --baseurl=http://elrepo.org/linux/elrepo/el7/x86_64/
+repo --name=elrepo-extras --baseurl=http://elrepo.org/linux/extras/el7/x86_64/
+repo --name=salt --baseurl=https://repo.saltproject.io/py3/redhat/7/x86_64/3005/
+%packages
+@base
+salt-minion
+%end
+
+%post
+yum update -y
+yum install -y sudo
+yum clean all
+yum -y groups install "GNOME Desktop"
+echo "exec gnome-session" >> ~/.xinitrc
+systemctl set-default graphical.target
+%end

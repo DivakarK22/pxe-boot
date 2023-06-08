@@ -5,19 +5,19 @@ MENU TITLE PXE Menu
 LABEL CENTOS GNOME
 MENU LABEL CENTOS GNOME
 KERNEL /networkboot/vmlinuz
-APPEND initrd=/networkboot/initrd.img ks=http://192.168.1.57/ks1.cfg
+APPEND initrd=/networkboot/initrd.img ks=http://192.168.1.57/ubuntu.cfg
 LABEL centos7_x64
 MENU LABEL CENTOS MINIMAL INSTALL
 KERNEL /networkboot/vmlinuz
-APPEND initrd=/networkboot/initrd.img ks=http://192.168.1.57/ks2.cfg
+APPEND initrd=/networkboot/initrd.img ks=http://192.168.1.57/minimal.cfg
 LABEL CENTOS MATE
 MENU LABEL CENTOS MATE
 KERNEL /networkboot/vmlinuz
-APPEND initrd=/networkboot/initrd.img ks=http://192.168.1.57/ks3.cfg
+APPEND initrd=/networkboot/initrd.img ks=http://192.168.1.57/mate.cfg
 LABEL CENTOS KDE
 MENU LABEL CENTOS KDE
 KERNEL /networkboot/vmlinuz
-APPEND initrd=/networkboot/initrd.img ks=http://192.168.1.57/ks4.cfg
+APPEND initrd=/networkboot/initrd.img ks=http://192.168.1.57/kde.cfg
 LABEL UBUNTU
 MENU LABEL UBUNTU
 KERNEL /ubuntu_test/vmlinuz

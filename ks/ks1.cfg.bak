@@ -42,7 +42,4 @@ salt-minion
 yum update -y
 yum install -y sudo
 yum clean all
-yum -y groups install "GNOME Desktop"
-echo "exec gnome-session" >> ~/.xinitrc
-systemctl set-default graphical.target
 %end

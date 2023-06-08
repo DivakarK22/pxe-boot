@@ -1,6 +1,6 @@
-default menu.c32
-prompt 0
-timeout 30
+PROMPT 1
+TIMEOUT 1000
+DEFAULT menu.c32
 MENU TITLE PXE Menu
 LABEL CENTOS GNOME
 MENU LABEL CENTOS GNOME
@@ -22,4 +22,3 @@ LABEL UBUNTU
 MENU LABEL UBUNTU
 KERNEL /ubuntu_test/vmlinuz
 APPEND initrd=/ubuntu_test/initrd.gz ks=http://192.168.1.57/ubuntu.cfg
-

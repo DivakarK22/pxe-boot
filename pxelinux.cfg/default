@@ -22,3 +22,7 @@ LABEL UBUNTU
 MENU LABEL UBUNTU
 KERNEL /ubuntu_test/vmlinuz
 APPEND initrd=/ubuntu_test/initrd.gz ks=http://192.168.1.57/ubuntu.cfg
+LABEL EL9
+MENU LABEL EL9
+KERNEL /networkboot/vmlinuz
+APPEND initrd=/networkboot/initrd.img ks=http://192.168.1.57/rockey9.cfg
